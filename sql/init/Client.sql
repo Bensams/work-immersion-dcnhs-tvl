@@ -1,7 +1,7 @@
 -- Client
 CREATE TABLE IF NOT EXISTS PaymentMethod(
 	PaymentID INT NOT NULL AUTO_INCREMENT,
-	CardType Text,
+	CardType TEXT,
 	CardNum TEXT NOT NULL,
 	Auth TEXT NOT NULL,
 	ExpDate DATE NOT NULL,
