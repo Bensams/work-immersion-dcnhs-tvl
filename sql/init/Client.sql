@@ -1,7 +1,7 @@
 -- Client
 CREATE TABLE IF NOT EXISTS PaymentMethod(
 	PaymentID INT NOT NULL AUTO_INCREMENT,
-	CardType Text,
+	CardType TEXT,
 	CardNum TEXT NOT NULL,
 	Auth TEXT NOT NULL,
 	ExpDate DATE NOT NULL,
@@ -10,15 +10,6 @@ CREATE TABLE IF NOT EXISTS PaymentMethod(
 	PRIMARY KEY (PaymentID)
 );
 
-CREATE TABLE IF NOT EXISTS Vehicle(
-	VehicleID INT NOT NULL AUTO_INCREMENT,
-	
-	Brand TEXT,
-	Model TEXT,
-	License TEXT NOT NULL,
-	
-	PRIMARY KEY(VehicleID)
-);
 
 CREATE TABLE IF NOT EXISTS Client (
 	ClientID INT NOT NULL AUTO_INCREMENT,
@@ -50,9 +41,11 @@ CREATE TABLE IF NOT EXISTS Client (
 	Amount INT,
 	
 	PaymentID INT NOT NULL,
-	VehicleID INT NOT NULL,
+	
+	VehicleBrand TEXT,
+	VehicleModel TEXT,
+	License TEXT,
 	
 	PRIMARY KEY (ClientID),
-	FOREIGN KEY (VehicleID) REFERENCES Vehicle(VehicleID),
 	FOREIGN KEY (PaymentID) REFERENCES PaymentMethod(PaymentID)
 ); 
