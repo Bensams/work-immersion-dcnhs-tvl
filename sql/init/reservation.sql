@@ -1,6 +1,6 @@
 
-// string -> TEXT NOT NULL, string? -> TEXT
-// PK: id int -> id INT NOT NULL AUTO_INCREMENT, ... PRIMARY KEY (id)
+--string -> TEXT NOT NULL, string? -> TEXT
+--PK: id int -> id INT NOT NULL AUTO_INCREMENT, ... PRIMARY KEY (id)
 
 CREATE TABLE IF NOT EXISTS Reservation (
 	id INT NOT NULL AUTO_INCREMENT,
@@ -29,3 +29,53 @@ CREATE TABLE IF NOT EXISTS ReservationRoom (
 	FOREIGN KEY (reservationId) REFERENCES Reservation(id),
 	FOREIGN KEY (roomId) REFERENCES Room(id)
 );
+
+-- Travel Agent
+	
+	CREATE TABLE IF NOT EXISTS TravelAgent {
+	id INT NOT NULL,
+	WalkInID INT NOT NULL,
+	
+	TravelAgent TEXT NOT NULL,
+	Contact TEXT NOT NULL,
+	OverrideCom DOUBLE,
+	
+	PRIMARY KEY (id),
+	FOREIGN KEY (WalkInID) REFERENCES Reservation(id)
+	}
+	
+--Guest Share
+	
+	CREATE TABLE IF NOT EXISTS GuestShare {
+	-- need validation
+	WalkInID INT NOT NULL,
+	
+	FirstName TEXT NOT NULL,
+	LastName TEXT NOT NULL,
+	UseFolio BOOLEAN,
+	StoreAsGuest BOOLEAN,
+	-- split room charges equally
+	SRCE BOOLEAN,
+	
+	FOREIGN KEY (WalkInID) REFERENCES Reservation(id)
+	}
+	
+-- Routing
+
+	CREATE TABLE IF NOT EXISTS Routing {
+	-- need validation
+	WalkInID INT NOT NULL,
+	
+	TransactGroup TEXT,
+	TransactCode TEXT,
+	FolioNum INT NOT NULL,
+	RouteSameBook BOOLEAN,
+	
+	ResRoom INT NOT NULL,
+	Name TEXT NOT NULL,
+	FilteredBy TEXT,
+	
+	FOREIGN KEY (WalkInID) REFERENCES Reservation(id)
+	FOREIGN KEY (ResRoom) REFERENCES ResRoom(id)
+	}
+ 	
