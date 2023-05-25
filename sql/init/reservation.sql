@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS ReservationRoom (
 
 -- Travel Agent
 	
-	CREATE TABLE IF NOT EXISTS TravelAgent {
+	CREATE TABLE IF NOT EXISTS TravelAgent (
 	id INT NOT NULL,
 	WalkInID INT NOT NULL,
 	
@@ -42,11 +42,11 @@ CREATE TABLE IF NOT EXISTS ReservationRoom (
 	
 	PRIMARY KEY (id),
 	FOREIGN KEY (WalkInID) REFERENCES Reservation(id)
-	}
+	);
 	
 --Guest Share
 	
-	CREATE TABLE IF NOT EXISTS GuestShare {
+	CREATE TABLE IF NOT EXISTS GuestShare (
 	-- need validation
 	WalkInID INT NOT NULL,
 	
@@ -58,11 +58,11 @@ CREATE TABLE IF NOT EXISTS ReservationRoom (
 	SRCE BOOLEAN,
 	
 	FOREIGN KEY (WalkInID) REFERENCES Reservation(id)
-	}
+	);
 	
 -- Routing
 
-	CREATE TABLE IF NOT EXISTS Routing {
+	CREATE TABLE IF NOT EXISTS Routing (
 	-- need validation
 	WalkInID INT NOT NULL,
 	
@@ -77,5 +77,5 @@ CREATE TABLE IF NOT EXISTS ReservationRoom (
 	
 	FOREIGN KEY (WalkInID) REFERENCES Reservation(id)
 	FOREIGN KEY (ResRoom) REFERENCES ResRoom(id)
-	}
+	);
  	
