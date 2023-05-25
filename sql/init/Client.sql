@@ -1,5 +1,5 @@
 --Payment Method
-CREATE TABLE IF NOT EXISTS PaymentMethod(
+CREATE TABLE IF NOT EXISTS PaymentMethod (
 	PaymentID INT NOT NULL,
 	WalkInID INT NOT NULL,
 	
@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS PaymentMethod(
 	FOREGIN KEY (WalkInID) REFERENCES Reservation(id)
 );
 
-CREATE TABLE IF NOT EXISTS Card {
+CREATE TABLE IF NOT EXISTS Card (
 	id INT NOT NULL,
 	CardType TEXT,
 	CardNum TEXT NOT NULL,
@@ -16,16 +16,16 @@ CREATE TABLE IF NOT EXISTS Card {
 	CardHolder TEXT NOT NULL,
 	
 	FOREIGN KEY (id) REFERENCES PaymentMethod(PaymentID)
-}
+);
 
-CREATE TABLE IF NOT EXISTS Cash {
+CREATE TABLE IF NOT EXISTS Cash (
 	id INT NOT NULL,
 	Amount INT NOT NULL,
 	
 	FOREIGN KEY (id) REFERENCES PaymentMethod(PaymentID)
-}
+);
 
-CREATE TABLE IF NOT EXISTS GCash {
+CREATE TABLE IF NOT EXISTS GCash (
 	id INT NOT NULL,
 	
 	GCashNum = TEXT,
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS GCash {
 	Amount INT NOT NULL,
 	
 	FOREIGN KEY (id) REFERENCES PaymentMethod(PaymentID)
-}
+);
 
 
 -- Client
