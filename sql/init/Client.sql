@@ -1,7 +1,7 @@
 --Payment Method
 CREATE TABLE IF NOT EXISTS PaymentMethod (
-	PaymentID INT NOT NULL,
-	WalkInID INT NOT NULL,
+	paymentID INT NOT NULL,
+	walkInID INT NOT NULL,
 	
 	PRIMARY KEY (PaymentID),
 	FOREGIN KEY (WalkInID) REFERENCES Reservation(id)
@@ -9,18 +9,18 @@ CREATE TABLE IF NOT EXISTS PaymentMethod (
 
 CREATE TABLE IF NOT EXISTS Card (
 	id INT NOT NULL,
-	CardType TEXT,
-	CardNum TEXT NOT NULL,
-	Auth TEXT NOT NULL,
-	ExpDate DATE NOT NULL,
-	CardHolder TEXT NOT NULL,
+	cardType TEXT,
+	cardNum TEXT NOT NULL,
+	auth TEXT NOT NULL,
+	expDate DATE NOT NULL,
+	cardHolder TEXT NOT NULL,
 	
 	FOREIGN KEY (id) REFERENCES PaymentMethod(PaymentID)
 );
 
 CREATE TABLE IF NOT EXISTS Cash (
 	id INT NOT NULL,
-	Amount INT NOT NULL,
+	amount INT NOT NULL,
 	
 	FOREIGN KEY (id) REFERENCES PaymentMethod(PaymentID)
 );
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS GCash (
 	id INT NOT NULL,
 	
 	GCashNum = TEXT,
-	Name TEXT,
+	name TEXT,
 	QR TEXT,
 	Amount INT NOT NULL,
 	
@@ -39,39 +39,39 @@ CREATE TABLE IF NOT EXISTS GCash (
 
 -- Client
 CREATE TABLE IF NOT EXISTS Client (
-	ClientID INT NOT NULL AUTO_INCREMENT,
+	clientID INT NOT NULL AUTO_INCREMENT,
 	
-	ClientType TEXT NOT NULL,
-	ClientTitle TEXT,
-	FirstName TEXT NOT NULL,
-	LastName TEXT NOT NULL,
+	clientType TEXT NOT NULL,
+	clientTitle TEXT,
+	firstName TEXT NOT NULL,
+	lastName TEXT NOT NULL,
 	
-	StreetAd TEXT NOT NULL,
-	CityAd TEXT NOT NULL,
-	ProvinceAd TEXT NOT NULL,
-	CountryAd TEXT NOT NULL,
-	ZipCode TEXT NOT NULL,
+	streetAd TEXT NOT NULL,
+	cityAd TEXT NOT NULL,
+	provinceAd TEXT NOT NULL,
+	countryAd TEXT NOT NULL,
+	zipCode TEXT NOT NULL,
 	
-	Telephone TEXT,
-	Mobile TEXT NOT NULL,
-	Email TEXT,
+	telephone TEXT,
+	mobile TEXT NOT NULL,
+	email TEXT,
 	
-	AcceptEmail BOOLEAN,
-	OpTCmpgn BOOLEAN,
+	acceptEmail BOOLEAN,
+	opTCmpgn BOOLEAN,
 	VIP BOOLEAN,
 	
-	SrcOfBusiness TEXT,
-	GuestNote TEXT NOT NULL,
-	ResNote TEXT NOT NULL,
+	srcOfBusiness TEXT,
+	guestNote TEXT NOT NULL,
+	resNote TEXT NOT NULL,
 	
-	PostDepo BOOLEAN,
-	Amount INT,
+	postDepo BOOLEAN,
+	amount INT,
 	
-	PaymentID INT NOT NULL,
+	paymentID INT NOT NULL,
 	
-	VehicleBrand TEXT,
-	VehicleModel TEXT,
-	License TEXT,
+	vehicleBrand TEXT,
+	vehicleModel TEXT,
+	license TEXT,
 	
 	PRIMARY KEY (ClientID),
 	FOREIGN KEY (PaymentID) REFERENCES PaymentMethod(PaymentID)
