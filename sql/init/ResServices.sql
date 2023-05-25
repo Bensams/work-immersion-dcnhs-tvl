@@ -1,20 +1,20 @@
 CREATE TABLE IF NOT EXISTS Services (
-    id INT NOT NULL AUTO_INCREMENT,
-	
-	ServicesType TEXT NOT NULL,
-	ServiceName TEXT NOT NULL,
-	Price DOUBLE NOT NULL,
-	QTY INT NOT NULL,
+    	id INT NOT NULL AUTO_INCREMENT,
+    
+	servicesType TEXT NOT NULL,
+	serviceName TEXT NOT NULL,
+	price DOUBLE NOT NULL,
+	qty INT NOT NULL,
 	
 	PRIMARY KEY (id)
-	);
+);
 
 CREATE TABLE IF NOT EXISTS ResServices (
 	id INT NOT NULL AUTO_INCREMENT,
 	
-	ServiceID INT NOT NULL,
-	WalkInID INT NOT NULL,
-	ResDate DATE NOT NULL,
+	serviceID INT NOT NULL,
+	walkInID INT NOT NULL,
+	resDate DATE NOT NULL,
 	
 	PRIMARY KEY (id),
 	FOREIGN KEY (ServiceID) REFERENCES Services(id),
