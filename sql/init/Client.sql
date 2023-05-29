@@ -1,6 +1,6 @@
 --Payment Method
 CREATE TABLE IF NOT EXISTS PaymentMethod (
-	paymentID INT NOT NULL,
+	paymentID INT NOT NULL AUTO_INCREMENT,
 	walkInID INT NOT NULL,
 	
 	PRIMARY KEY (PaymentID),
