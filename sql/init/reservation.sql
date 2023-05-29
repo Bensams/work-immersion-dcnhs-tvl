@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS ReservationRoom (
 -- Travel Agent
 	
 CREATE TABLE IF NOT EXISTS TravelAgent (
-	id INT NOT NULL,
+	id INT NOT NULL AUTO_INCREMENT,
 	walkInID INT NOT NULL,
 	
 	travelAgent TEXT NOT NULL,
