@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS Room (
-	id INT NOT NULL,
+	id INT NOT NULL AUTO_INCREMENT,
 	-- TODO: implement supplemental data
 	roomNumber INT NOT NULL,
 	roomType TEXT NOT NULL,
