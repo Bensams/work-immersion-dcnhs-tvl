@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("NoteView")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("United Nations Development Programme")]
+[assembly: AssemblyCompany("Davao City National High School")]
 [assembly: AssemblyProduct("NoteView")]
-[assembly: AssemblyCopyright("Copyright © United Nations Development Programme 2023")]
+[assembly: AssemblyCopyright("Copyright © DCNHS TVL-Programming 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

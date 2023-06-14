@@ -63,26 +63,6 @@ namespace NoteView.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2 {
-            get {
-                object obj = ResourceManager.GetObject("2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _21 {
-            get {
-                object obj = ResourceManager.GetObject("21", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap bg {
             get {
                 object obj = ResourceManager.GetObject("bg", resourceCulture);
@@ -93,9 +73,9 @@ namespace NoteView.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bg1 {
+        internal static System.Drawing.Bitmap bg_admin {
             get {
-                object obj = ResourceManager.GetObject("bg1", resourceCulture);
+                object obj = ResourceManager.GetObject("bg_admin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +83,9 @@ namespace NoteView.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon1 {
+        internal static System.Drawing.Bitmap bg_noteview {
             get {
-                object obj = ResourceManager.GetObject("icon1", resourceCulture);
+                object obj = ResourceManager.GetObject("bg_noteview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +93,9 @@ namespace NoteView.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconvb {
+        internal static System.Drawing.Bitmap close {
             get {
-                object obj = ResourceManager.GetObject("iconvb", resourceCulture);
+                object obj = ResourceManager.GetObject("close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +103,9 @@ namespace NoteView.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconvb1 {
+        internal static System.Drawing.Bitmap left_arrow {
             get {
-                object obj = ResourceManager.GetObject("iconvb1", resourceCulture);
+                object obj = ResourceManager.GetObject("left_arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +113,9 @@ namespace NoteView.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconvb11 {
+        internal static System.Drawing.Bitmap new_booking {
             get {
-                object obj = ResourceManager.GetObject("iconvb11", resourceCulture);
+                object obj = ResourceManager.GetObject("new_booking", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +123,9 @@ namespace NoteView.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap welcome {
+        internal static System.Drawing.Bitmap new_booking1 {
             get {
-                object obj = ResourceManager.GetObject("welcome", resourceCulture);
+                object obj = ResourceManager.GetObject("new_booking1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +133,9 @@ namespace NoteView.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap welcome1 {
+        internal static System.Drawing.Bitmap noteview_icon {
             get {
-                object obj = ResourceManager.GetObject("welcome1", resourceCulture);
+                object obj = ResourceManager.GetObject("noteview_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +143,88 @@ namespace NoteView.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap welcome2 {
+        internal static System.Drawing.Bitmap noteview_superlabel {
             get {
-                object obj = ResourceManager.GetObject("welcome2", resourceCulture);
+                object obj = ResourceManager.GetObject("noteview_superlabel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap right_arrow {
+            get {
+                object obj = ResourceManager.GetObject("right_arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CREATE TABLE IF NOT EXISTS Room (
+        ///	id INT NOT NULL AUTO_INCREMENT,
+        ///	-- TODO: implement supplemental data
+        ///	roomNumber TEXT NOT NULL,
+        ///	roomType TEXT NOT NULL,
+        ///	rate INT NOT NULL,
+        ///	capacity INT NOT NULL
+        ///	
+        ///	PRIMARY KEY (id)
+        ///);
+        ///.
+        /// </summary>
+        internal static string room {
+            get {
+                return ResourceManager.GetString("room", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search {
+            get {
+                object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search1 {
+            get {
+                object obj = ResourceManager.GetObject("search1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///CREATE TABLE IF NOT EXISTS UserInfo (
+        ///	id INT NOT NULL AUTO_INCREMENT,
+        ///	firstName TEXT NOT NULL,
+        ///	lastName TEXT NOT NULL,
+        ///	userType TEXT NOT NULL,
+        ///	userName TEXT NOT NULL,
+        ///	password TEXT NOT NULL,
+        ///	
+        ///	PRIMARY KEY (id)
+        ///);
+        ///.
+        /// </summary>
+        internal static string user_info {
+            get {
+                return ResourceManager.GetString("user_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap willkommen {
+            get {
+                object obj = ResourceManager.GetObject("willkommen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

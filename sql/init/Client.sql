@@ -41,28 +41,21 @@ CREATE TABLE IF NOT EXISTS GCash (
 CREATE TABLE IF NOT EXISTS Client (
 	clientID INT NOT NULL AUTO_INCREMENT,
 	
-	clientType TEXT NOT NULL,
-	clientTitle TEXT,
 	firstName TEXT NOT NULL,
 	lastName TEXT NOT NULL,
 	
-	streetAd TEXT NOT NULL,
-	cityAd TEXT NOT NULL,
-	provinceAd TEXT NOT NULL,
-	countryAd TEXT NOT NULL,
+	streetAd TEXT,
 	zipCode TEXT NOT NULL,
+	cityAd TEXT,
+	countryAd TEXT,
+	stateProvinceAd TEXT,
+	nationality TEXT,
+
+	guestNote TEXT,
 	
 	telephone TEXT,
 	mobile TEXT NOT NULL,
 	email TEXT,
-	
-	acceptEmail BOOLEAN,
-	opTCmpgn BOOLEAN,
-	VIP BOOLEAN,
-	
-	srcOfBusiness TEXT,
-	guestNote TEXT NOT NULL,
-	resNote TEXT NOT NULL,
 	
 	postDepo BOOLEAN,
 	amount INT,
@@ -71,6 +64,7 @@ CREATE TABLE IF NOT EXISTS Client (
 	
 	vehicleBrand TEXT,
 	vehicleModel TEXT,
+	vehicleColor TEXT,
 	license TEXT,
 	
 	PRIMARY KEY (ClientID),

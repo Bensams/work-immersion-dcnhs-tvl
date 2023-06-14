@@ -1,26 +1,52 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace NoteView
 {
+  internal class UnexpectedException : Exception
+  {
+    public UnexpectedException(string msg) : base(msg) { }
+  }
+
   internal static class Program
   {
-    private static MySqlConnection conn;
-    public static MySqlConnection Connection { set { conn = value; } }
+    public static Session session;
+    public static bool dbConnOk = false;
+
+    public static void Assert(bool condition, string msg)
+    {
+      if (!condition) throw new UnexpectedException(msg);
+    }
+
+    public static void AssertUnreachable(string msg = "Code unreachable")
+    {
+      throw new UnexpectedException(msg);
+    }
+
     /// <summary>
     /// The main entry point for the application.
     /// </summary>
     [STAThread]
     static void Main()
     {
+      try
+      {
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
-        // TODO: skip this step if the user has already logged in to a database
+        // TODO: Implement correct form flow
+       /* Application.Run(new NewReservation());
+        return;*/
         Application.Run(new SetupDB());
+        if (!dbConnOk) return;
+          Application.Run(new UserLogin());
+        if (session == null || session.username == null) return;
+        Application.Run(new HomeForm());
+      }
+      finally
+      {
+        Session.conn?.Close();
+      }
     }
   }
 }
