@@ -33,6 +33,15 @@ namespace NoteView
     {
             this.tb_Info = new System.Windows.Forms.TabControl();
             this.tp_Calendar = new System.Windows.Forms.TabPage();
+            this.cb_enableRestrictOverride = new System.Windows.Forms.CheckBox();
+            this.cb_enableOverBook = new System.Windows.Forms.CheckBox();
+            this.cb_EnableRateOverride = new System.Windows.Forms.CheckBox();
+            this.dgv_calendar = new System.Windows.Forms.DataGridView();
+            this.book_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomType_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateToday_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTom_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nextTom_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GuestInfoPage = new System.Windows.Forms.TabPage();
             this.tb_State_Province = new System.Windows.Forms.TextBox();
             this.btn_Clear = new System.Windows.Forms.Button();
@@ -102,6 +111,7 @@ namespace NoteView
             this.lbl_FetchResID = new System.Windows.Forms.Label();
             this.lbl_ResID = new System.Windows.Forms.Label();
             this.TopPanel = new System.Windows.Forms.Panel();
+            this.dtp_coTime = new System.Windows.Forms.DateTimePicker();
             this.dtp_Departure = new System.Windows.Forms.DateTimePicker();
             this.dtp_Arrival = new System.Windows.Forms.DateTimePicker();
             this.tb_Total = new System.Windows.Forms.TextBox();
@@ -137,18 +147,9 @@ namespace NoteView
             this.lbl_RoomNumber = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtp_coTime = new System.Windows.Forms.DateTimePicker();
-            this.dgv_calendar = new System.Windows.Forms.DataGridView();
-            this.book_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomType_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateToday_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTom_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nextTom_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cb_EnableRateOverride = new System.Windows.Forms.CheckBox();
-            this.cb_enableOverBook = new System.Windows.Forms.CheckBox();
-            this.cb_enableRestrictOverride = new System.Windows.Forms.CheckBox();
             this.tb_Info.SuspendLayout();
             this.tp_Calendar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_calendar)).BeginInit();
             this.GuestInfoPage.SuspendLayout();
             this.gb_PaymentMethod.SuspendLayout();
             this.gb_Vehicle.SuspendLayout();
@@ -160,7 +161,6 @@ namespace NoteView
             ((System.ComponentModel.ISupportInitialize)(this.nud_Child)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Adult)).BeginInit();
             this.RightSidePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_calendar)).BeginInit();
             this.SuspendLayout();
             // 
             // tb_Info
@@ -190,6 +190,81 @@ namespace NoteView
             this.tp_Calendar.TabIndex = 0;
             this.tp_Calendar.Text = "Calendar";
             this.tp_Calendar.UseVisualStyleBackColor = true;
+            // 
+            // cb_enableRestrictOverride
+            // 
+            this.cb_enableRestrictOverride.AutoSize = true;
+            this.cb_enableRestrictOverride.Location = new System.Drawing.Point(277, 444);
+            this.cb_enableRestrictOverride.Name = "cb_enableRestrictOverride";
+            this.cb_enableRestrictOverride.Size = new System.Drawing.Size(163, 17);
+            this.cb_enableRestrictOverride.TabIndex = 3;
+            this.cb_enableRestrictOverride.Text = "Enable Restriction Overriding";
+            this.cb_enableRestrictOverride.UseVisualStyleBackColor = true;
+            // 
+            // cb_enableOverBook
+            // 
+            this.cb_enableOverBook.AutoSize = true;
+            this.cb_enableOverBook.Location = new System.Drawing.Point(162, 444);
+            this.cb_enableOverBook.Name = "cb_enableOverBook";
+            this.cb_enableOverBook.Size = new System.Drawing.Size(109, 17);
+            this.cb_enableOverBook.TabIndex = 2;
+            this.cb_enableOverBook.Text = "Enable Overbook";
+            this.cb_enableOverBook.UseVisualStyleBackColor = true;
+            // 
+            // cb_EnableRateOverride
+            // 
+            this.cb_EnableRateOverride.AutoSize = true;
+            this.cb_EnableRateOverride.Location = new System.Drawing.Point(20, 444);
+            this.cb_EnableRateOverride.Name = "cb_EnableRateOverride";
+            this.cb_EnableRateOverride.Size = new System.Drawing.Size(136, 17);
+            this.cb_EnableRateOverride.TabIndex = 1;
+            this.cb_EnableRateOverride.Text = "Enable Rate Overriding";
+            this.cb_EnableRateOverride.UseVisualStyleBackColor = true;
+            // 
+            // dgv_calendar
+            // 
+            this.dgv_calendar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dgv_calendar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_calendar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.book_column,
+            this.roomType_column,
+            this.dateToday_column,
+            this.dateTom_column,
+            this.nextTom_column});
+            this.dgv_calendar.Location = new System.Drawing.Point(6, 4);
+            this.dgv_calendar.Name = "dgv_calendar";
+            this.dgv_calendar.Size = new System.Drawing.Size(542, 346);
+            this.dgv_calendar.TabIndex = 0;
+            // 
+            // book_column
+            // 
+            this.book_column.HeaderText = "Book";
+            this.book_column.Name = "book_column";
+            this.book_column.ReadOnly = true;
+            // 
+            // roomType_column
+            // 
+            this.roomType_column.HeaderText = "Room Type";
+            this.roomType_column.Name = "roomType_column";
+            this.roomType_column.ReadOnly = true;
+            // 
+            // dateToday_column
+            // 
+            this.dateToday_column.HeaderText = "<Date Today>";
+            this.dateToday_column.Name = "dateToday_column";
+            this.dateToday_column.ReadOnly = true;
+            // 
+            // dateTom_column
+            // 
+            this.dateTom_column.HeaderText = "<Date Tom>";
+            this.dateTom_column.Name = "dateTom_column";
+            this.dateTom_column.ReadOnly = true;
+            // 
+            // nextTom_column
+            // 
+            this.nextTom_column.HeaderText = "<Date Next Tom>";
+            this.nextTom_column.Name = "nextTom_column";
+            this.nextTom_column.ReadOnly = true;
             // 
             // GuestInfoPage
             // 
@@ -959,6 +1034,22 @@ namespace NoteView
             this.TopPanel.Size = new System.Drawing.Size(1164, 166);
             this.TopPanel.TabIndex = 1;
             // 
+            // dtp_coTime
+            // 
+            this.dtp_coTime.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_coTime.CustomFormat = "";
+            this.dtp_coTime.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtp_coTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_coTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtp_coTime.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.dtp_coTime.Location = new System.Drawing.Point(304, 104);
+            this.dtp_coTime.MinDate = new System.DateTime(2023, 6, 9, 0, 0, 0, 0);
+            this.dtp_coTime.Name = "dtp_coTime";
+            this.dtp_coTime.ShowUpDown = true;
+            this.dtp_coTime.Size = new System.Drawing.Size(98, 21);
+            this.dtp_coTime.TabIndex = 33;
+            this.dtp_coTime.Value = new System.DateTime(2023, 6, 9, 0, 0, 0, 0);
+            // 
             // dtp_Departure
             // 
             this.dtp_Departure.CustomFormat = "";
@@ -1343,101 +1434,11 @@ namespace NoteView
             this.label2.TabIndex = 8;
             this.label2.Text = "Created By:";
             // 
-            // dtp_coTime
-            // 
-            this.dtp_coTime.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_coTime.CustomFormat = "";
-            this.dtp_coTime.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtp_coTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_coTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtp_coTime.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.dtp_coTime.Location = new System.Drawing.Point(304, 104);
-            this.dtp_coTime.MinDate = new System.DateTime(2023, 6, 9, 0, 0, 0, 0);
-            this.dtp_coTime.Name = "dtp_coTime";
-            this.dtp_coTime.ShowUpDown = true;
-            this.dtp_coTime.Size = new System.Drawing.Size(98, 21);
-            this.dtp_coTime.TabIndex = 33;
-            this.dtp_coTime.Value = new System.DateTime(2023, 6, 9, 0, 0, 0, 0);
-            // 
-            // dgv_calendar
-            // 
-            this.dgv_calendar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dgv_calendar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_calendar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.book_column,
-            this.roomType_column,
-            this.dateToday_column,
-            this.dateTom_column,
-            this.nextTom_column});
-            this.dgv_calendar.Location = new System.Drawing.Point(6, 4);
-            this.dgv_calendar.Name = "dgv_calendar";
-            this.dgv_calendar.Size = new System.Drawing.Size(542, 346);
-            this.dgv_calendar.TabIndex = 0;
-            // 
-            // book_column
-            // 
-            this.book_column.HeaderText = "Book";
-            this.book_column.Name = "book_column";
-            this.book_column.ReadOnly = true;
-            // 
-            // roomType_column
-            // 
-            this.roomType_column.HeaderText = "Room Type";
-            this.roomType_column.Name = "roomType_column";
-            this.roomType_column.ReadOnly = true;
-            // 
-            // dateToday_column
-            // 
-            this.dateToday_column.HeaderText = "<Date Today>";
-            this.dateToday_column.Name = "dateToday_column";
-            this.dateToday_column.ReadOnly = true;
-            // 
-            // dateTom_column
-            // 
-            this.dateTom_column.HeaderText = "<Date Tom>";
-            this.dateTom_column.Name = "dateTom_column";
-            this.dateTom_column.ReadOnly = true;
-            // 
-            // nextTom_column
-            // 
-            this.nextTom_column.HeaderText = "<Date Next Tom>";
-            this.nextTom_column.Name = "nextTom_column";
-            this.nextTom_column.ReadOnly = true;
-            // 
-            // cb_EnableRateOverride
-            // 
-            this.cb_EnableRateOverride.AutoSize = true;
-            this.cb_EnableRateOverride.Location = new System.Drawing.Point(20, 444);
-            this.cb_EnableRateOverride.Name = "cb_EnableRateOverride";
-            this.cb_EnableRateOverride.Size = new System.Drawing.Size(136, 17);
-            this.cb_EnableRateOverride.TabIndex = 1;
-            this.cb_EnableRateOverride.Text = "Enable Rate Overriding";
-            this.cb_EnableRateOverride.UseVisualStyleBackColor = true;
-            // 
-            // cb_enableOverBook
-            // 
-            this.cb_enableOverBook.AutoSize = true;
-            this.cb_enableOverBook.Location = new System.Drawing.Point(162, 444);
-            this.cb_enableOverBook.Name = "cb_enableOverBook";
-            this.cb_enableOverBook.Size = new System.Drawing.Size(109, 17);
-            this.cb_enableOverBook.TabIndex = 2;
-            this.cb_enableOverBook.Text = "Enable Overbook";
-            this.cb_enableOverBook.UseVisualStyleBackColor = true;
-            // 
-            // cb_enableRestrictOverride
-            // 
-            this.cb_enableRestrictOverride.AutoSize = true;
-            this.cb_enableRestrictOverride.Location = new System.Drawing.Point(277, 444);
-            this.cb_enableRestrictOverride.Name = "cb_enableRestrictOverride";
-            this.cb_enableRestrictOverride.Size = new System.Drawing.Size(163, 17);
-            this.cb_enableRestrictOverride.TabIndex = 3;
-            this.cb_enableRestrictOverride.Text = "Enable Restriction Overriding";
-            this.cb_enableRestrictOverride.UseVisualStyleBackColor = true;
-            // 
             // NewReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(1164, 681);
             this.Controls.Add(this.RightSidePanel);
             this.Controls.Add(this.label1);
@@ -1446,14 +1447,16 @@ namespace NoteView
             this.Controls.Add(this.tb_Info);
             this.Controls.Add(this.lbl_FetchResID);
             this.Controls.Add(this.lbl_ResID);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MinimumSize = new System.Drawing.Size(1180, 720);
             this.Name = "NewReservation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "New Reservation";
             this.Load += new System.EventHandler(this.NewReservation_Load);
             this.tb_Info.ResumeLayout(false);
             this.tp_Calendar.ResumeLayout(false);
             this.tp_Calendar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_calendar)).EndInit();
             this.GuestInfoPage.ResumeLayout(false);
             this.GuestInfoPage.PerformLayout();
             this.gb_PaymentMethod.ResumeLayout(false);
@@ -1471,7 +1474,6 @@ namespace NoteView
             ((System.ComponentModel.ISupportInitialize)(this.nud_Adult)).EndInit();
             this.RightSidePanel.ResumeLayout(false);
             this.RightSidePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_calendar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
